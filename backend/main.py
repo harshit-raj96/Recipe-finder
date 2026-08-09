@@ -1,4 +1,5 @@
 from fastapi import FastAPI, UploadFile, File
+import shutil
 
 app = FastAPI()
 
@@ -12,7 +13,13 @@ def home():
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
+
+    file_path = f"../uploads/{file.filename}"
+
+    with open(file_path, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+
     return {
         "filename": file.filename,
-        "message": "Image received successfully"
+        "message": "Image uploaded successfully"
     }

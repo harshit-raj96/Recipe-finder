@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background: #f4f6f8;
+
+    color: #222;
+
+    padding: 30px;
+}
+
+
+/* Main Container */
+
+.container {
+
+    width: 100%;
+
+    max-width: 750px;
+
+    margin: 40px auto;
+}
+
+
+/* Hero */
+
+.hero {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.hero h1 {
+
+    font-size: 42px;
+
+    margin-bottom: 12px;
+}
+
+
+.hero p {
+
+    font-size: 18px;
+
+    color: #666;
+
+    line-height: 1.5;
+}
+
+
+/* Upload Card */
+
+.upload-card {
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.upload-card h2 {
+
+    font-size: 27px;
+
+    margin-bottom: 12px;
+}
+
+
+.description {
+
+    color: #666;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+/* Hide File Input */
+
+#food-image {
+
+    display: none;
+}
+
+
+/* Choose Button */
+
+.choose-button {
+
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: #252b3a;
+
+    color: white;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition: 0.2s;
+}
+
+
+.choose-button:hover {
+
+    background: #3b4357;
+}
+
+
+/* Selected File */
+
+.selected-file {
+
+    min-height: 25px;
+
+    margin-top: 18px;
+
+    color: #555;
+
+    font-size: 16px;
+
+    word-break: break-word;
+}
+
+
+/* Preview */
+
+.preview-container {
+
+    display: none;
+
+    width: 100%;
+
+    max-width: 420px;
+
+    margin: 25px auto;
+}
+
+
+#image-preview {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 330px;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    border: 1px solid #ddd;
+}
+
+
+/* Analyze Button */
+
+#analyze-btn {
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #252b3a;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+#analyze-btn:hover {
+
+    background: #3b4357;
+}
+
+
+#analyze-btn:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* Result */
+
+.result {
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    background: #f1f3f5;
+
+    border-radius: 14px;
+}
+
+
+.result h2 {
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+
+#result-message {
+
+    color: #555;
+
+    line-height: 1.6;
+
+    word-break: break-word;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 15px;
+    }
+
+
+    .container {
+
+        margin: 20px auto;
+    }
+
+
+    .hero h1 {
+
+        font-size: 32px;
+    }
+
+
+    .hero p {
+
+        font-size: 16px;
+    }
+
+
+    .upload-card {
+
+        padding: 25px 18px;
+    }
+
+
+    .upload-card h2 {
+
+        font-size: 23px;
+    }
+
+}

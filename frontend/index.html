@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food Recipe AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- Header -->
+
+        <section class="hero">
+
+            <h1>Food Recipe AI</h1>
+
+            <p>
+                Upload a food image and discover possible recipes.
+            </p>
+
+        </section>
+
+
+        <!-- Upload Card -->
+
+        <section class="upload-card">
+
+            <h2>Upload Food Image</h2>
+
+            <p class="description">
+                Select a food, vegetable, grain, ingredient
+                or any other edible item.
+            </p>
+
+
+            <!-- File Input -->
+
+            <label for="food-image" class="choose-button">
+                Choose Image
+            </label>
+
+            <input type="file" id="food-image" accept="image/*">
+
+
+            <!-- Selected File -->
+
+            <p id="selected-file" class="selected-file"></p>
+
+
+            <!-- Image Preview -->
+
+            <div id="preview-container" class="preview-container">
+
+                <img id="image-preview" src="" alt="Selected food image">
+
+            </div>
+
+
+            <!-- Analyze Button -->
+
+            <button type="button" id="analyze-btn">
+                Analyze Food
+            </button>
+
+
+            <!-- Result -->
+
+            <div class="result">
+
+                <h2>Result</h2>
+
+                <p id="result-message">
+                    Upload an image to get started.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js?v=2" defer></script>
+
+</body>
+
+</html>
