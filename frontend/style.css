@@ -1,6 +1,9 @@
 /* =====================================================
-   RESET
+   RECIPEAI FRONTEND
 ===================================================== */
+
+
+/* ================= RESET ================= */
 
 * {
     margin: 0;
@@ -9,40 +12,25 @@
 }
 
 
-:root {
-    --green: #2f8f4e;
-    --dark-green: #176b35;
-    --light-green: #edf8ef;
-    --border: #e1e7e2;
-    --text: #17231b;
-    --muted: #66716a;
-    --white: #ffffff;
-}
-
-
 body {
     font-family: Arial, Helvetica, sans-serif;
 
-    background: #fafcfa;
+    background: #ffffff;
 
-    color: var(--text);
+    color: #17251d;
 
     line-height: 1.5;
 }
 
 
-/* =====================================================
-   NAVBAR
-===================================================== */
+/* ================= NAVBAR ================= */
 
 .navbar {
     height: 70px;
 
-    padding: 0 3.5%;
+    width: 100%;
 
-    background: var(--white);
-
-    border-bottom: 1px solid var(--border);
+    padding: 0 3%;
 
     display: flex;
 
@@ -50,7 +38,9 @@ body {
 
     justify-content: space-between;
 
-    gap: 30px;
+    background: white;
+
+    border-bottom: 1px solid #e5eae6;
 
     position: sticky;
 
@@ -60,7 +50,7 @@ body {
 }
 
 
-/* Logo */
+/* LOGO */
 
 .logo {
     display: flex;
@@ -69,13 +59,11 @@ body {
 
     gap: 7px;
 
-    color: var(--dark-green);
+    color: #16733a;
 
     font-size: 25px;
 
     font-weight: 700;
-
-    white-space: nowrap;
 }
 
 
@@ -84,64 +72,60 @@ body {
 }
 
 
-/* Navigation */
+/* NAV LINKS */
 
 .nav-links {
     display: flex;
 
     align-items: center;
 
-    gap: 31px;
+    gap: 34px;
 }
 
 
 .nav-links a {
     text-decoration: none;
 
-    color: #404b44;
+    color: #26332b;
 
     font-size: 14px;
 
-    font-weight: 500;
-
-    transition: 0.2s;
+    font-weight: 600;
 }
 
 
 .nav-links a:hover {
-    color: var(--green);
+    color: #087a35;
 }
 
 
-/* Navbar right side */
+/* NAV ACTIONS */
 
-.navbar-actions {
+.nav-actions {
     display: flex;
 
     align-items: center;
 
-    gap: 15px;
+    gap: 12px;
 }
 
 
-/* Search */
+/* SEARCH */
 
 .search-box {
-    height: 38px;
+    width: 220px;
 
-    width: 200px;
+    height: 40px;
 
-    border: 1px solid var(--border);
+    border: 1px solid #dfe5e1;
 
-    border-radius: 20px;
+    border-radius: 22px;
 
     display: flex;
 
     align-items: center;
 
-    padding: 0 13px;
-
-    background: white;
+    padding: 0 14px;
 }
 
 
@@ -157,74 +141,74 @@ body {
 
 
 .search-box span {
-    font-size: 21px;
+    font-size: 20px;
 
-    color: #59645d;
+    color: #6b756e;
 }
 
 
-/* Upload */
+/* UPLOAD */
 
-.upload-top-btn {
+.upload-top-btn,
+.hero-upload-btn,
+.footer button {
     border: none;
 
-    background: var(--green);
+    background: #087a35;
 
     color: white;
 
-    padding: 11px 18px;
-
-    border-radius: 10px;
-
-    font-weight: 600;
-
     cursor: pointer;
+
+    font-weight: 700;
 
     transition: 0.2s;
 }
 
 
-.upload-top-btn:hover {
-    background: var(--dark-green);
+.upload-top-btn {
+    height: 40px;
+
+    padding: 0 18px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
 }
 
 
-/* =====================================================
-   MAIN CONTAINER
-===================================================== */
+.upload-top-btn:hover,
+.hero-upload-btn:hover,
+.footer button:hover {
+    background: #056329;
+}
+
+
+/* ================= MAIN ================= */
 
 .main-container {
     width: 94%;
 
-    max-width: 1180px;
+    max-width: 1450px;
 
-    margin: 27px auto;
+    margin: 20px auto 30px;
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.08fr 0.92fr;
 
-    gap: 24px;
+    gap: 22px;
 
     align-items: start;
 }
 
 
-/* =====================================================
-   LEFT COLUMN
-===================================================== */
+/* ================= HERO ================= */
 
-.left-column {
-    min-width: 0;
-}
+.hero-image-card {
+    width: 100%;
 
-
-/* =====================================================
-   FOOD IMAGE
-===================================================== */
-
-.food-image-card {
-    height: 315px;
+    height: 345px;
 
     position: relative;
 
@@ -232,13 +216,11 @@ body {
 
     border-radius: 14px;
 
-    background: #e8ece9;
-
-    border: 1px solid var(--border);
+    background: #edf2ee;
 }
 
 
-.food-image-card img {
+.hero-image-card img {
     width: 100%;
 
     height: 100%;
@@ -249,61 +231,36 @@ body {
 }
 
 
-/* Image upload button */
-
-.image-upload-btn {
+.hero-upload-btn {
     position: absolute;
+
+    bottom: 18px;
 
     left: 50%;
 
-    bottom: 8px;
-
     transform: translateX(-50%);
 
-    border: none;
+    padding: 12px 25px;
 
-    background: rgb(33, 156, 41);
-
-    color: white;
-
-    padding: 12px 20px;
-
-    border-radius: 11px;
-
-    font-weight: 600;
-    ;
+    border-radius: 9px;
 
     font-size: 14px;
 
-    cursor: pointer;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.16);
-
-    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 
-.image-upload-btn:hover {
-    background: #f2f8f3;
-    color: black;
-    
-    
+/* ================= INTRO ================= */
+
+.recipe-intro {
+    padding: 14px 0 12px;
 }
 
 
-/* =====================================================
-   RECIPE HEADING
-===================================================== */
+.recipe-intro h1 {
+    color: #176b35;
 
-.recipe-heading {
-    padding: 13px 10px 7px;
-}
-
-
-.recipe-heading h1 {
-    color: #123e22;
-
-    font-size: 27px;
+    font-size: 32px;
 
     line-height: 1.2;
 
@@ -311,36 +268,32 @@ body {
 }
 
 
-.recipe-heading p {
-    color: var(--muted);
+.recipe-intro p {
+    color: #606a64;
 
     font-size: 14px;
 
-    max-width: 650px;
+    max-width: 720px;
 }
 
 
-/* =====================================================
-   RECIPE INFO
-===================================================== */
+/* ================= STATS ================= */
 
-.recipe-info {
+.recipe-stats {
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
 
-    gap: 9px;
+    gap: 10px;
 
-    margin: 12px 10px 18px;
+    margin-bottom: 16px;
 }
 
 
-.info-card {
-    min-height: 82px;
+.stat-card {
+    min-height: 90px;
 
-    border: 1px solid var(--border);
-
-    background: white;
+    border: 1px solid #e2e8e3;
 
     border-radius: 10px;
 
@@ -348,65 +301,68 @@ body {
 
     flex-direction: column;
 
-    align-items: center;
-
     justify-content: center;
 
-    text-align: center;
+    align-items: center;
+
+    background: white;
 }
 
 
-.info-icon {
-    color: var(--green);
+.stat-icon {
+    color: #167a3a;
 
-    font-size: 20px;
+    font-size: 21px;
 
     margin-bottom: 2px;
 }
 
 
-.info-card span {
-    color: #66716a;
+.stat-icon.orange {
+    color: #f26a21;
+}
+
+
+.stat-card span {
+    color: #69736c;
 
     font-size: 11px;
 }
 
 
-.info-card strong {
-    color: #17231b;
+.stat-card strong {
+    color: #1b2820;
 
-    font-size: 14px;
+    font-size: 15px;
 }
 
 
-/* =====================================================
-   WHAT CAN BE MADE
-===================================================== */
+/* ================= CONTENT CARDS ================= */
 
-.made-section {
-    background: var(--light-green);
+.content-card {
+    border: 1px solid #e1e7e2;
 
-    border: 1px solid #dcebdd;
+    border-radius: 13px;
 
-    border-radius: 12px;
+    background: white;
 
-    padding: 16px;
+    margin-bottom: 15px;
 
-    margin-bottom: 18px;
+    padding: 14px;
 }
 
 
-.section-title h2 {
-    color: var(--dark-green);
+.section-heading h2 {
+    color: #176b35;
 
-    font-size: 16px;
+    font-size: 18px;
 
     margin-bottom: 3px;
 }
 
 
-.section-title p {
-    color: #657068;
+.section-heading p {
+    color: #69736c;
 
     font-size: 12px;
 
@@ -414,124 +370,91 @@ body {
 }
 
 
+/* ================= VARIATIONS ================= */
+
 .variation-grid {
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
 
     gap: 9px;
 }
 
 
 .variation-card {
-    background: white;
+    border: 1px solid #e3e8e4;
 
-    border: 1px solid #dce5dd;
-
-    border-radius: 10px;
+    border-radius: 9px;
 
     overflow: hidden;
 
     text-align: center;
+
+    background: white;
 }
 
 
-.variation-image {
+.variation-card img {
+    width: 100%;
+
     height: 82px;
 
-    background-size: cover;
+    object-fit: cover;
 
-    background-position: center;
+    display: block;
 }
 
 
 .variation-card h3 {
-    padding: 7px 4px 9px;
+    color: #26332b;
 
-    font-size: 11px;
+    font-size: 12px;
 
-    line-height: 1.25;
+    line-height: 1.3;
+
+    padding: 8px 4px 10px;
 }
 
 
-/*
-   Demo gradient backgrounds.
-   Later these will be replaced with
-   real recipe images from backend.
-*/
+/* ================= NUTRITION ================= */
 
-.image-one {
-    background:
-        linear-gradient(135deg, #e8a04c, #527b3d);
-}
-
-
-.image-two {
-    background:
-        linear-gradient(135deg, #76a843, #e56a32);
-}
-
-
-.image-three {
-    background:
-        linear-gradient(135deg, #d79042, #527d49);
-}
-
-
-.image-four {
-    background:
-        linear-gradient(135deg, #80a84e, #d9a04c);
-}
-
-
-/* =====================================================
-   NUTRITION
-===================================================== */
-
-.nutrition-section {
-    background: white;
-
-    border: 1px solid var(--border);
-
-    border-radius: 12px;
-
-    padding: 16px;
-}
-
-
-.nutrition-heading {
+.nutrition-title-row {
     display: flex;
 
     align-items: center;
 
-    justify-content: space-between;
+    gap: 6px;
 
-    margin-bottom: 13px;
+    margin-bottom: 10px;
 }
 
 
-.nutrition-heading h2 {
-    font-size: 16px;
+.nutrition-title-row h2 {
+    color: #176b35;
 
-    color: var(--dark-green);
+    font-size: 17px;
 }
 
 
-.nutrition-heading h2 span {
-    font-weight: 400;
+.nutrition-title-row span {
+    color: #5e6962;
 
     font-size: 12px;
 }
 
 
-.nutrition-heading button {
+.nutrition-title-row button {
+    margin-left: auto;
+
     border: none;
 
     background: transparent;
 
-    color: var(--green);
+    color: #16733a;
 
     font-size: 11px;
+
+    font-weight: 600;
 
     cursor: pointer;
 }
@@ -540,491 +463,618 @@ body {
 .nutrition-grid {
     display: grid;
 
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5,1fr);
 
     gap: 8px;
 }
 
 
 .nutrition-card {
-    border: 1px solid var(--border);
+    min-height: 70px;
 
-    border-radius: 8px;
+    border: 1px solid #e6ebe7;
 
-    padding: 9px 5px;
-
-    text-align: center;
-}
-
-
-.nutrition-card span {
-    display: block;
-
-    color: #68726c;
-
-    font-size: 10px;
-
-    margin-bottom: 2px;
-}
-
-
-.nutrition-card strong {
-    font-size: 13px;
-}
-
-
-/* =====================================================
-   RIGHT COLUMN
-===================================================== */
-
-.right-column {
-    min-width: 0;
-}
-
-
-/* =====================================================
-   RECIPE DETAILS
-===================================================== */
-
-.recipe-details {
-    background: white;
-
-    border: 1px solid var(--border);
-
-    border-radius: 14px;
-
-    overflow: hidden;
-}
-
-
-/* Tabs */
-
-.tabs {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    border-bottom: 1px solid var(--border);
-}
-
-
-.tabs button {
-    position: relative;
-
-    border: none;
-
-    background: transparent;
-
-    padding: 16px 5px;
-
-    color: #3f4943;
-
-    font-size: 13px;
-
-    cursor: pointer;
-}
-
-
-.tabs button.active {
-    color: var(--dark-green);
-
-    font-weight: 700;
-}
-
-
-.tabs button.active::after {
-    content: "";
-
-    position: absolute;
-
-    left: 22%;
-
-    right: 22%;
-
-    bottom: -1px;
-
-    height: 3px;
-
-    background: var(--green);
-
-    border-radius: 4px;
-}
-
-
-/* =====================================================
-   STEPS
-===================================================== */
-
-.steps-container {
-    padding: 15px 17px 16px;
-}
-
-
-.step {
-    display: flex;
-
-    gap: 13px;
-
-    position: relative;
-
-    padding-bottom: 19px;
-}
-
-
-.step:last-child {
-    padding-bottom: 0;
-}
-
-
-/* Vertical line */
-
-.step:not(:last-child)::before {
-    content: "";
-
-    position: absolute;
-
-    width: 1px;
-
-    background: #d7e4d9;
-
-    left: 12px;
-
-    top: 25px;
-
-    bottom: 0;
-}
-
-
-.step-number {
-    flex: 0 0 25px;
-
-    height: 25px;
-
-    width: 25px;
-
-    border-radius: 50%;
-
-    background: var(--green);
-
-    color: white;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    z-index: 2;
-}
-
-
-.step-content {
-    padding-top: 1px;
-}
-
-
-.step-content h3 {
-    font-size: 13px;
-
-    margin-bottom: 2px;
-
-    color: #18241c;
-}
-
-
-.step-content p {
-    color: #59635d;
-
-    font-size: 12px;
-
-    line-height: 1.5;
-}
-
-
-/* =====================================================
-   BENEFITS
-===================================================== */
-
-.benefits-section {
-    margin-top: 14px;
-
-    padding: 16px;
-
-    border-radius: 12px;
-
-    border: 1px solid #dbeadd;
-
-    background: #f0f9f1;
-}
-
-
-.benefits-section h2 {
-    color: var(--dark-green);
-
-    font-size: 16px;
-
-    margin-bottom: 10px;
-}
-
-
-.benefits-section ul,
-.tips-section ul {
-    list-style: none;
+    border-radius: 9px;
 
     display: flex;
 
     flex-direction: column;
 
-    gap: 7px;
+    align-items: center;
+
+    justify-content: center;
 }
 
 
-.benefits-section li {
-    color: #39453e;
+.nutrition-icon {
+    color: #16733a;
 
-    font-size: 12px;
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 8px;
+    font-size: 18px;
 }
 
 
-.benefits-section li span {
-    color: var(--green);
+.nutrition-icon.fire {
+    color: #ff6b22;
+}
 
-    font-weight: bold;
+
+.nutrition-card small {
+    color: #6b756e;
+
+    font-size: 10px;
+}
+
+
+.nutrition-card strong {
+    color: #202d25;
 
     font-size: 13px;
 }
 
 
-/* =====================================================
-   TIPS
-===================================================== */
+/* ================= SIMILAR ================= */
 
-.tips-section {
-    margin-top: 14px;
+.similar-grid {
+    display: grid;
 
-    padding: 16px;
+    grid-template-columns: repeat(5,1fr);
 
-    border-radius: 12px;
-
-    border: 1px solid #dce7f5;
-
-    background: #f1f7ff;
+    gap: 8px;
 }
 
 
-.tips-section h2 {
-    color: #24528c;
+.similar-card {
+    border: 1px solid #e3e8e4;
 
-    font-size: 16px;
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+
+.similar-card img {
+    width: 100%;
+
+    height: 80px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.similar-card h3 {
+    padding: 6px 5px 2px;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.similar-card p {
+    padding: 0 5px 7px;
+
+    color: #f2ad00;
+
+    font-size: 10px;
+}
+
+
+.similar-card p span {
+    color: #6d756f;
+
+    margin-left: 2px;
+}
+
+
+/* =====================================================
+   RIGHT SIDE
+===================================================== */
+/* =========================================
+   RIGHT COLUMN
+========================================= */
+
+.right-column {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+/* =========================================
+   MAIN RECIPE PANEL
+========================================= */
+
+.recipe-panel {
+    border: 1px solid #dfe6e1;
+    border-radius: 16px;
+    background: #fff;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   TABS
+========================================= */
+
+.recipe-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 12px;
+    border-bottom: 1px solid #e5ebe7;
+    background: #fff;
+}
+
+.tab-btn {
+    min-height: 48px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #f3f5f4;
+
+    color: #27332c;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    background: #e4f1e7;
+}
+
+.tab-btn.active {
+    background: #087a35;
+    color: white;
+}
+
+
+/* =========================================
+   TAB CONTENT
+========================================= */
+
+.tab-content {
+    display: none;
+    padding: 22px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+/* =========================================
+   PANEL HEADING
+========================================= */
+
+.panel-heading {
+    margin-bottom: 18px;
+}
+
+.panel-heading h2 {
+    color: #176b35;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.panel-heading p {
+    color: #69736c;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   INGREDIENTS
+========================================= */
+
+.ingredients-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.ingredient-card {
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 10px;
+
+    border: 1px solid #e1e7e3;
+
+    border-radius: 11px;
+
+    background: #fff;
+
+    transition: 0.2s;
+}
+
+.ingredient-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.ingredient-card img {
+    width: 70px;
+    height: 62px;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+
+    flex-shrink: 0;
+}
+
+.ingredient-card h3 {
+    color: #202c25;
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+.ingredient-card p {
+    color: #69736c;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   STEPS
+========================================= */
+
+.steps-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.step-card {
+    display: grid;
+
+    grid-template-columns: 32px 115px 1fr;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #edf0ee;
+}
+
+.step-card:last-child {
+    border-bottom: none;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #16803b;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.step-card img {
+    width: 115px;
+    height: 75px;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+}
+
+.step-card h3 {
+    color: #253129;
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+.step-card p {
+    color: #626d66;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   TIPS / BENEFITS
+========================================= */
+
+.tips-list,
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.tip-card,
+.benefit-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    padding: 15px;
+
+    border-radius: 11px;
+}
+
+.tip-card {
+    background: #fff9e9;
+
+    border: 1px solid #f0e3c0;
+}
+
+.benefit-card {
+    background: #f1f8f3;
+
+    border: 1px solid #dcebe0;
+}
+
+.tip-card span,
+.benefit-card span {
+    color: #16803b;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+.tip-card p,
+.benefit-card p {
+    color: #4d5952;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   RIGHT SIDE EXTRA INFORMATION
+========================================= */
+
+.quick-info {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+}
+
+
+/* =========================================
+   QUICK CARD
+========================================= */
+
+.quick-card {
+    padding: 20px;
+
+    min-height: 220px;
+
+    border-radius: 15px;
+
+    border: 1px solid;
+}
+
+.tips-quick {
+    background: #fff9e9;
+
+    border-color: #f0e3c0;
+}
+
+.benefits-quick {
+    background: #f1f8f3;
+
+    border-color: #dcebe0;
+}
+
+
+/* =========================================
+   QUICK TITLE
+========================================= */
+
+.quick-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 16px;
+}
+
+.quick-icon {
+    font-size: 24px;
+}
+
+.quick-title h2 {
+    font-size: 20px;
+
+    color: #31523a;
+}
+
+
+/* =========================================
+   QUICK LIST
+========================================= */
+
+.quick-card ul {
+    padding-left: 21px;
+}
+
+.quick-card li {
+    margin-bottom: 12px;
+
+    color: #4f5c53;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   THIRD INFORMATION CARD
+========================================= */
+
+.recipe-extra-card {
+    background: #f4f8ff;
+
+    border: 1px solid #dce5f3;
+
+    border-radius: 15px;
+
+    padding: 20px;
+}
+
+.recipe-extra-card h2 {
+    color: #315c91;
+
+    font-size: 20px;
+
+    margin-bottom: 13px;
+}
+
+.recipe-extra-card ul {
+    padding-left: 21px;
+}
+
+.recipe-extra-card li {
+    color: #526171;
+
+    font-size: 14px;
 
     margin-bottom: 10px;
 }
 
 
-.tips-section li {
-    color: #354453;
+/* =========================================
+   SUMMARY
+========================================= */
 
-    font-size: 12px;
-
-    padding-left: 14px;
-
-    position: relative;
-}
-
-
-.tips-section li::before {
-    content: "•";
-
-    position: absolute;
-
-    left: 0;
-
-    font-weight: bold;
-
-    color: #24528c;
-}
-
-
-/* =====================================================
-   SIMILAR RECIPES
-===================================================== */
-
-.similar-section {
-    width: 94%;
-
-    max-width: 1180px;
-
-    margin: 25px auto;
-
-    padding: 16px;
-
-    background: white;
-
-    border: 1px solid var(--border);
-
-    border-radius: 14px;
-}
-
-
-.similar-heading h2 {
-    color: #1d3826;
-
-    font-size: 16px;
-
-    margin-bottom: 13px;
-}
-
-
-.similar-grid {
+.recipe-summary {
     display: grid;
 
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
-    gap: 12px;
+    gap: 10px;
 }
 
+.recipe-summary div {
+    min-height: 100px;
 
-.similar-card {
-    border: 1px solid var(--border);
+    border: 1px solid #e1e7e3;
 
-    border-radius: 9px;
+    border-radius: 12px;
 
-    overflow: hidden;
+    padding: 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
 
     background: white;
 }
 
+.recipe-summary span {
+    font-size: 22px;
 
-.similar-image {
-    height: 120px;
-
-    background-size: cover;
-
-    background-position: center;
+    margin-bottom: 4px;
 }
 
+.recipe-summary strong {
+    font-size: 15px;
 
-/* Demo recipe image areas */
-
-.similar-one {
-    background:
-        linear-gradient(135deg, #e88b32, #608b40);
+    color: #26332b;
 }
 
-
-.similar-two {
-    background:
-        linear-gradient(135deg, #6e9947, #d2a13d);
-}
-
-
-.similar-three {
-    background:
-        linear-gradient(135deg, #557d43, #c9904a);
-}
-
-
-.similar-four {
-    background:
-        linear-gradient(135deg, #432e4f, #9b3c69);
-}
-
-
-.similar-five {
-    background:
-        linear-gradient(135deg, #668b3f, #d99b42);
-}
-
-
-.similar-card h3 {
-    padding: 8px 9px 2px;
-
-    font-size: 12px;
-}
-
-
-.similar-card p {
-    padding: 0 9px 9px;
-
-    color: #f2a900;
+.recipe-summary small {
+    color: #737d76;
 
     font-size: 11px;
 }
 
 
-.similar-card p span {
-    color: #5c665f;
-
-    margin-left: 4px;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
+/* ================= FOOTER ================= */
 
 .footer {
-    width: 94%;
+    min-height: 65px;
 
-    max-width: 1180px;
+    padding: 10px 3%;
 
-    margin: 0 auto 20px;
+    border-top: 1px solid #e2e8e4;
 
-    min-height: 48px;
-
-    border-radius: 12px;
-
-    background: #edf8ed;
-
-    border: 1px solid #dbeada;
-
-    padding: 9px 15px;
+    background: #f2f8f3;
 
     display: flex;
 
     align-items: center;
 
     justify-content: space-between;
-
-    gap: 15px;
 }
 
 
 .footer p {
-    color: #497153;
+    color: #4f7159;
 
     font-size: 12px;
 }
 
 
+.footer p span {
+    margin: 0 5px;
+}
+
+
 .footer button {
-    border: none;
-
-    background: var(--green);
-
-    color: white;
-
-    padding: 9px 16px;
+    padding: 10px 20px;
 
     border-radius: 9px;
 
     font-size: 12px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    white-space: nowrap;
 }
 
 
@@ -1032,35 +1082,40 @@ body {
    RESPONSIVE
 ===================================================== */
 
-@media (max-width: 1050px) {
+@media (max-width:1100px) {
 
     .nav-links {
-        gap: 15px;
+        gap: 18px;
     }
 
+
     .search-box {
-        width: 150px;
+        width: 170px;
     }
+
 
     .main-container {
         grid-template-columns: 1fr;
     }
 
-    .similar-grid {
-        grid-template-columns: repeat(3, 1fr);
+
+    .right-column {
+        width: 100%;
     }
 
 }
 
 
-@media (max-width: 750px) {
+@media (max-width:750px) {
 
     .navbar {
         height: auto;
 
-        padding: 15px 5%;
+        padding: 10px 4%;
 
         flex-wrap: wrap;
+
+        gap: 10px;
     }
 
 
@@ -1073,11 +1128,11 @@ body {
 
         overflow-x: auto;
 
-        padding-top: 5px;
+        gap: 18px;
     }
 
 
-    .navbar-actions {
+    .nav-actions {
         margin-left: auto;
     }
 
@@ -1088,51 +1143,72 @@ body {
 
 
     .main-container {
-        width: 92%;
+        width: 94%;
 
-        margin-top: 18px;
+        grid-template-columns: 1fr;
     }
 
 
-    .recipe-info {
-        grid-template-columns: repeat(2, 1fr);
+    .hero-image-card {
+        height: 270px;
+    }
+
+
+    .recipe-intro h1 {
+        font-size: 26px;
+    }
+
+
+    .recipe-stats {
+        grid-template-columns: repeat(2,1fr);
     }
 
 
     .variation-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
     }
 
 
     .nutrition-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-
-    .similar-section {
-        width: 92%;
+        grid-template-columns: repeat(2,1fr);
     }
 
 
     .similar-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
     }
 
 
-    .footer {
-        width: 92%;
+    .ingredients-grid {
+        grid-template-columns: 1fr;
+    }
 
-        flex-direction: column;
 
-        align-items: stretch;
+    .quick-info {
+        grid-template-columns: 1fr 1fr;
+    }
 
-        text-align: center;
+
+    .step-card {
+        grid-template-columns: 28px 90px 1fr;
+    }
+
+
+    .step-card img {
+        width: 90px;
+
+        height: 60px;
+    }
+
+
+    .tab-btn {
+        font-size: 10px;
     }
 
 }
 
 
-@media (max-width: 480px) {
+@media (max-width:480px) {
 
     .logo {
         font-size: 21px;
@@ -1140,34 +1216,57 @@ body {
 
 
     .upload-top-btn {
-        padding: 9px 11px;
+        padding: 0 10px;
 
         font-size: 11px;
     }
 
 
-    .food-image-card {
-        height: 245px;
+    .hero-image-card {
+        height: 230px;
     }
 
 
-    .recipe-heading h1 {
-        font-size: 23px;
+    .hero-upload-btn {
+        width: 80%;
+
+        font-size: 12px;
+
+        padding: 10px;
     }
 
 
-    .nutrition-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-
-    .similar-grid {
+    .quick-info {
         grid-template-columns: 1fr;
     }
 
 
-    .tabs button {
+    .recipe-summary {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+
+    .step-card {
+        grid-template-columns: 25px 75px 1fr;
+
+        gap: 7px;
+    }
+
+
+    .step-card img {
+        width: 75px;
+
+        height: 55px;
+    }
+
+
+    .step-card h3 {
         font-size: 11px;
+    }
+
+
+    .step-card p {
+        font-size: 10px;
     }
 
 }
