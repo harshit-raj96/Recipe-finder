@@ -2,95 +2,765 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>Food Recipe AI</title>
+    <title>RecipeAI - AI Food Recipe Generator</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
+
 
 <body>
 
-    <main class="container">
+    <!-- =================================================
+         NAVBAR
+    ================================================== -->
 
-        <!-- Header -->
+    <header class="navbar">
 
-        <section class="hero">
+        <div class="logo">
+            <span class="logo-icon">♨</span>
+            <span>RecipeAI</span>
+        </div>
 
-            <h1>Food Recipe AI</h1>
 
-            <p>
-                Upload a food image and discover possible recipes.
-            </p>
+        <nav class="nav-links">
+
+            <a href="#">Home</a>
+
+            <a href="#">Recipes</a>
+
+            <a href="#">AI Recipe</a>
+
+            <a href="#">Saved</a>
+
+            <a href="#">About</a>
+
+        </nav>
+
+
+        <div class="navbar-actions">
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    placeholder="Search recipes..."
+                >
+
+                <span>⌕</span>
+
+            </div>
+
+
+            <button class="upload-top-btn">
+                📷 Upload Photo
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         MAIN RECIPE AREA
+    ================================================== -->
+
+    <main class="main-container">
+
+
+        <!-- ================= LEFT COLUMN ================= -->
+
+        <section class="left-column">
+
+
+            <!-- FOOD IMAGE -->
+
+            <div class="food-image-card">
+
+                <img
+                    id="foodImage"
+                    src="/uploads/recipeposter.jpeg"
+                    alt="Food recipe"
+                >
+
+
+                <button
+                    class="image-upload-btn"
+                    id="uploadPhotoBtn"
+                >
+                    📷 Upload Your Food Photo
+                </button>
+
+
+                <!-- Hidden input.
+                     JavaScript will use this later. -->
+
+                <input
+                    type="file"
+                    id="foodInput"
+                    accept="image/*"
+                    hidden
+                >
+
+            </div>
+
+
+
+            <!-- RECIPE TITLE -->
+
+            <div class="recipe-heading">
+
+                <h1>
+                    Healthy Brussel Sprout Salad
+                </h1>
+
+                <p>
+                    A fresh, crunchy and nutritious salad made
+                    with brussel sprouts, vegetables, nuts,
+                    berries and cheese. Perfect for a healthy meal!
+                </p>
+
+            </div>
+
+
+
+            <!-- RECIPE INFO -->
+
+            <div class="recipe-info">
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        ◷
+                    </div>
+
+                    <span>Prep Time</span>
+
+                    <strong>15 mins</strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        🍲
+                    </div>
+
+                    <span>Cook Time</span>
+
+                    <strong>10 mins</strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        ▮
+                    </div>
+
+                    <span>Difficulty</span>
+
+                    <strong>Easy</strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        🍴
+                    </div>
+
+                    <span>Servings</span>
+
+                    <strong>2-3</strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 WHAT CAN BE MADE
+            ================================================== -->
+
+            <section class="made-section">
+
+                <div class="section-title">
+
+                    <h2>
+                        🌱 What Can Be Made With This?
+                    </h2>
+
+                    <p>
+                        You can make these variations using
+                        similar ingredients.
+                    </p>
+
+                </div>
+
+
+                <div class="variation-grid">
+
+
+                    <article class="variation-card">
+
+                        <div class="variation-image image-one">
+                        </div>
+
+                        <h3>
+                            Warm Brussel Sprout Bowl
+                        </h3>
+
+                    </article>
+
+
+                    <article class="variation-card">
+
+                        <div class="variation-image image-two">
+                        </div>
+
+                        <h3>
+                            Brussel Sprout Stir Fry
+                        </h3>
+
+                    </article>
+
+
+                    <article class="variation-card">
+
+                        <div class="variation-image image-three">
+                        </div>
+
+                        <h3>
+                            Roasted Veg Quinoa Bowl
+                        </h3>
+
+                    </article>
+
+
+                    <article class="variation-card">
+
+                        <div class="variation-image image-four">
+                        </div>
+
+                        <h3>
+                            Brussel Sprout Wrap
+                        </h3>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 NUTRITION
+            ================================================== -->
+
+            <section class="nutrition-section">
+
+                <div class="nutrition-heading">
+
+                    <h2>
+                        🌿 Nutritional Information
+                        <span>(Per Serving)</span>
+                    </h2>
+
+                    <button>
+                        Show Full Nutrition Facts
+                        ↓
+                    </button>
+
+                </div>
+
+
+                <div class="nutrition-grid">
+
+
+                    <div class="nutrition-card">
+
+                        <span>Calories</span>
+
+                        <strong>
+                            320 kcal
+                        </strong>
+
+                    </div>
+
+
+                    <div class="nutrition-card">
+
+                        <span>Protein</span>
+
+                        <strong>
+                            12 g
+                        </strong>
+
+                    </div>
+
+
+                    <div class="nutrition-card">
+
+                        <span>Carbs</span>
+
+                        <strong>
+                            28 g
+                        </strong>
+
+                    </div>
+
+
+                    <div class="nutrition-card">
+
+                        <span>Fats</span>
+
+                        <strong>
+                            18 g
+                        </strong>
+
+                    </div>
+
+
+                    <div class="nutrition-card">
+
+                        <span>Fiber</span>
+
+                        <strong>
+                            7 g
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
 
         </section>
 
 
-        <!-- Upload Card -->
 
-        <section class="upload-card">
+        <!-- ================= RIGHT COLUMN ================= -->
 
-            <h2>Upload Food Image</h2>
-
-            <p class="description">
-                Select a food, vegetable, grain, ingredient
-                or any other edible item.
-            </p>
+        <section class="right-column">
 
 
-            <!-- File Input -->
+            <!-- =================================================
+                 RECIPE TABS
+            ================================================== -->
 
-            <label for="food-image" class="choose-button">
-                Choose Image
-            </label>
-
-            <input type="file" id="food-image" accept="image/*">
+            <div class="recipe-details">
 
 
-            <!-- Selected File -->
+                <div class="tabs">
 
-            <p id="selected-file" class="selected-file"></p>
+                    <button>
+                        Ingredients
+                    </button>
+
+                    <button class="active">
+                        Steps
+                    </button>
+
+                    <button>
+                        Tips
+                    </button>
+
+                    <button>
+                        Benefits
+                    </button>
+
+                </div>
 
 
-            <!-- Image Preview -->
 
-            <div id="preview-container" class="preview-container">
+                <!-- =================================================
+                     STEPS
+                ================================================== -->
 
-                <img id="image-preview" src="" alt="Selected food image">
+                <div class="steps-container">
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            1
+                        </div>
+
+                        <div class="step-content">
+
+                            <h3>
+                                Prepare Brussel Sprouts
+                            </h3>
+
+                            <p>
+                                Slice the brussel sprouts using
+                                a mandoline or sharp knife into
+                                thin pieces.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            2
+                        </div>
+
+                        <div class="step-content">
+
+                            <h3>
+                                Wash & Dry
+                            </h3>
+
+                            <p>
+                                Wash the sliced brussel sprouts
+                                thoroughly and let them dry
+                                using a clean towel.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            3
+                        </div>
+
+                        <div class="step-content">
+
+                            <h3>
+                                Mix Ingredients
+                            </h3>
+
+                            <p>
+                                Add brussel sprouts, lemon juice,
+                                roasted walnut, dried berries
+                                and shaved cheese.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            4
+                        </div>
+
+                        <div class="step-content">
+
+                            <h3>
+                                Season
+                            </h3>
+
+                            <p>
+                                Add salt and pepper according
+                                to your taste.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            5
+                        </div>
+
+                        <div class="step-content">
+
+                            <h3>
+                                Drizzle & Toss
+                            </h3>
+
+                            <p>
+                                Drizzle olive oil over the salad
+                                and gently toss everything together.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            6
+                        </div>
+
+                        <div class="step-content">
+
+                            <h3>
+                                Serve
+                            </h3>
+
+                            <p>
+                                Serve fresh and enjoy your
+                                healthy brussel sprout salad.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
 
             </div>
 
 
-            <!-- Analyze Button -->
 
-            <button type="button" id="analyze-btn">
-                Analyze Food
-            </button>
+            <!-- =================================================
+                 HEALTH BENEFITS
+            ================================================== -->
+
+            <section class="benefits-section">
+
+                <h2>
+                    ♡ Health Benefits
+                </h2>
 
 
-            <!-- Result -->
+                <ul>
 
-            <div class="result">
+                    <li>
+                        <span>✓</span>
+                        Brussel sprouts are rich in vitamins C and K.
+                    </li>
 
-                <h2>Result</h2>
+                    <li>
+                        <span>✓</span>
+                        High in fiber and antioxidants.
+                    </li>
 
-                <p id="result-message">
-                    Upload an image to get started.
-                </p>
+                    <li>
+                        <span>✓</span>
+                        Walnuts provide healthy omega-3 fats.
+                    </li>
 
-            </div>
+                    <li>
+                        <span>✓</span>
+                        Berries contain useful antioxidants.
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        Olive oil provides healthy fats.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 COOKING TIPS
+            ================================================== -->
+
+            <section class="tips-section">
+
+                <h2>
+                    💡 Cooking Tips
+                </h2>
+
+
+                <ul>
+
+                    <li>
+                        Use fresh brussel sprouts for better
+                        texture and taste.
+                    </li>
+
+                    <li>
+                        You can roast the vegetables for a
+                        warm version.
+                    </li>
+
+                    <li>
+                        Add grilled chicken or chickpeas
+                        for extra protein.
+                    </li>
+
+                </ul>
+
+            </section>
+
 
         </section>
 
     </main>
 
 
+
+    <!-- =================================================
+         SIMILAR RECIPES
+    ================================================== -->
+
+    <section class="similar-section">
+
+        <div class="similar-heading">
+
+            <h2>
+                Similar Recipes You Might Like
+            </h2>
+
+        </div>
+
+
+        <div class="similar-grid">
+
+
+            <article class="similar-card">
+
+                <div class="similar-image similar-one">
+                </div>
+
+                <h3>
+                    Quinoa Veg Salad
+                </h3>
+
+                <p>
+                    ⭐⭐⭐⭐⭐
+                    <span>4.5 (120)</span>
+                </p>
+
+            </article>
+
+
+
+            <article class="similar-card">
+
+                <div class="similar-image similar-two">
+                </div>
+
+                <h3>
+                    Avocado Veg Salad
+                </h3>
+
+                <p>
+                    ⭐⭐⭐⭐☆
+                    <span>4.4 (98)</span>
+                </p>
+
+            </article>
+
+
+
+            <article class="similar-card">
+
+                <div class="similar-image similar-three">
+                </div>
+
+                <h3>
+                    Broccoli Almond Salad
+                </h3>
+
+                <p>
+                    ⭐⭐⭐⭐⭐
+                    <span>4.6 (150)</span>
+                </p>
+
+            </article>
+
+
+
+            <article class="similar-card">
+
+                <div class="similar-image similar-four">
+                </div>
+
+                <h3>
+                    Kale & Berry Salad
+                </h3>
+
+                <p>
+                    ⭐⭐⭐⭐☆
+                    <span>4.3 (87)</span>
+                </p>
+
+            </article>
+
+
+
+            <article class="similar-card">
+
+                <div class="similar-image similar-five">
+                </div>
+
+                <h3>
+                    Chickpea Veg Bowl
+                </h3>
+
+                <p>
+                    ⭐⭐⭐⭐⭐
+                    <span>4.5 (110)</span>
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="footer">
+
+        <p>
+            Powered by AI • Get recipes from any food photo
+            in seconds!
+        </p>
+
+
+        <button>
+            ↻ Try Another Photo
+        </button>
+
+    </footer>
+
+
+
     <!-- JavaScript -->
-    <script src="script.js?v=2" defer></script>
+
+    <script src="app.js"></script>
 
 </body>
 
